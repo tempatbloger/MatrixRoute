@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24;
 
 /*
 --------------------------------------------------------------
@@ -7,7 +7,7 @@ pragma solidity ^0.8.20;
 --------------------------------------------------------------
  Name:        Matrix Route
  Symbol:      MRX
- Supply:      1,000,000,000,000 RTMX (1 Trillion)
+ Supply:      1,000,000,000,000 MRX (1 Trillion)
  Decimals:    18
  Network:     Polygon (PoS)
  Owner:       Renounced automatically on deployment
@@ -20,11 +20,12 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract RouteMatrix is ERC20, Ownable {
-    constructor() ERC20("Route Matrix", "RTMX") Ownable(msg.sender) {
+contract MatrixRoute is ERC20, Ownable {
+    constructor() ERC20("Matrix Route", "MRX") Ownable(msg.sender) {
         _mint(msg.sender, 1_000_000_000_000 * 10 ** decimals());
         renounceOwnership();
     }
 
-    string public constant PROJECT_INFO = "Route Matrix (RTMX) - Polygon ERC20, Ownership Renounced, Reference: GitHub";
+    string public constant PROJECT_INFO =
+        "Matrix Route (MRX) - Polygon ERC20, Ownership Renounced, Reference: GitHub";
 }
